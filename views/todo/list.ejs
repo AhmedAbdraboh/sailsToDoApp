@@ -1,0 +1,39 @@
+
+
+
+
+
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Todo</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+      <% for(var i=0; i < todos.length; i++) { %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= todos[i].action %></td>
+            <% if(!todos[i].done){ %>
+            <td>Not Done Yet!!!</td>
+            <% }else{ %>
+            <td>Done!!</td>
+            <% } %>
+            <td><a href="/delete/<%= todos[i].id %>" class="btn btn-danger">DELETE</a>  <a href="/edit/<%= todos[i].id %>" class="btn btn-info" id="update">UPDATE</a>  <% if(!todos[i].done){ %><a href="/done/<%= todos[i].id %>" class="btn btn-success">MARDK AS DONE</a><% } %></td>
+        </tr>
+    <% } %>
+      
+    </tbody>
+  </table>
+
+  <script>
+    function deleteTodo(id){
+      alert(id);
+    } 
+    
+  </script>
